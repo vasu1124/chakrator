@@ -1,0 +1,8 @@
+apiVersion: example.com/v1
+kind: MyResource
+metadata:
+  name: example-resource
+  namespace: default
+spec:
+  message: "Hello from Chakrator!"
+  replicas: 3

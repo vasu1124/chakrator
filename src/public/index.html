@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakrator - Dynamic Operator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Chakrator</div>
+            <div class="actions">
+                <span id="status">Ready</span>
+                <button id="save-btn">Save & Deploy</button>
+            </div>
+        </header>
+        <main>
+            <div class="editor-pane">
+                <div id="editor-container"></div>
+            </div>
+            <div class="logs-pane">
+                <div class="logs-header">
+                    <div class="logs-header-left">
+                        <span class="logs-title">Live Logs</span>
+                        <span class="log-count" id="log-count">0</span>
+                    </div>
+                    <div class="logs-controls">
+                        <div class="log-filter">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn filter-error" data-filter="error">Errors</button>
+                            <button class="filter-btn filter-success" data-filter="success">Success</button>
+                        </div>
+                        <button id="auto-scroll-toggle" class="active">
+                            <span>📌</span> Auto-scroll
+                        </button>
+                        <button id="clear-logs">Clear</button>
+                    </div>
+                </div>
+                <div id="logs-content">
+                    <div class="logs-empty">
+                        <div class="logs-empty-icon">📋</div>
+                        <div class="logs-empty-text">Waiting for logs...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

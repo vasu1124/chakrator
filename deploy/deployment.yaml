@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chakrator
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: chakrator
+  template:
+    metadata:
+      labels:
+        app: chakrator
+    spec:
+      serviceAccountName: chakrator
+      containers:
+      - name: chakrator
+        image: chakrator:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
